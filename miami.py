@@ -27,7 +27,7 @@ cs = digitalio.DigitalInOut(board.D22)
 mcp = MCP.MCP3008(spi, cs)
 
 # create 6 analog input channels
-channels = []
+channels = [None] * 6
 channels[0] = AnalogIn(mcp, MCP.P0)
 channels[1] = AnalogIn(mcp, MCP.P1)
 channels[2] = AnalogIn(mcp, MCP.P2)
@@ -35,13 +35,7 @@ channels[3] = AnalogIn(mcp, MCP.P3)
 channels[4] = AnalogIn(mcp, MCP.P4)
 channels[5] = AnalogIn(mcp, MCP.P5)
 
-last_read = []
-last_read[0] = 0
-last_read[1] = 0
-last_read[2] = 0
-last_read[3] = 0
-last_read[4] = 0
-last_read[5] = 0
+last_read = [0] * 6
 
 tolerance = 250
 
