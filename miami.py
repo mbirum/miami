@@ -57,6 +57,7 @@ while True:
         channel_base = 6
 
     for c in range(5):
+        print(c)
         # read the analog pin
         pot_value = channels[c].value
         
