@@ -56,8 +56,7 @@ while True:
     if GPIO.input(toggle_pin) == GPIO.HIGH:
         channel_base = 6
 
-    for c in range(5):
-        print(c)
+    for c in range(6):
         # read the analog pin
         pot_value = channels[c].value
         
