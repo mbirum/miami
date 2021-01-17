@@ -5,8 +5,7 @@ import board
 import RPi.GPIO as GPIO
 import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
-from amidiw import MIDIInterface
-from amidiw import CC_ON
+from rtmidiw import MIDIInterface
 
 # set up toggle switch pin
 toggle_pin = 26
