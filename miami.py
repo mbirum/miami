@@ -36,7 +36,7 @@ channels[5] = AnalogIn(mcp, MCP.P5)
 
 last_read = [0] * 6
 
-tolerance = 400
+tolerance = 1000
 
 # create midi interface
 midi = MIDIInterface()
