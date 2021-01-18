@@ -1,5 +1,1 @@
-ps -ef | grep rtpmidi | grep -v grep | awk '{print $2}' | xargs -I@ kill -9 @ >/dev/null
-ps -ef | grep miami | grep -v grep | awk '{print $2}' | xargs -I@ kill -9 @ >/dev/null
-/opt/rtpmidi_0.6.0-buster/bin/rtpmidi listen -u 5004 -p 14:0 &
-sleep 3
 exec -a miami python3 /home/pi/miami/miami.py &
