@@ -58,6 +58,8 @@ while True:
     for c in range(6):
         # read the analog pin
         pot_value = channels[c].value
+
+        # ema smoothing here
         
         # how much have they changed since the last read
         pot_adjust = abs(pot_value - last_read[c])
