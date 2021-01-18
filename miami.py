@@ -36,7 +36,8 @@ channels[5] = AnalogIn(mcp, MCP.P5)
 
 last_read = [0] * 6
 
-tolerance = 400
+tolerance = 500
+ema_a = 0.6
 
 # create midi interface
 midi = MIDIInterface()
@@ -59,8 +60,16 @@ while True:
         # read the analog pin
         pot_value = channels[c].value
 
-        # ema smoothing here
+        # EMA_S = (EMA_a*sensorValue) + ((1-EMA_a)*EMA_S)
+        ema_pot_value = (ema_a * pot_value) + ((1 - ema_a) * last_read[c])
         
+        pot_value_remapped = remap_range(pot_value, 0, 65535, 0, 127)
+        ema_value_remapped = remap_range(ema_pot_value, 0, 65535, 0, 127)
+
+        print(pot_value_remapped + '    ' + ema_value_remapped)
+
+        """
+
         # how much have they changed since the last read
         pot_adjust = abs(pot_value - last_read[c])
 
@@ -70,5 +79,7 @@ while True:
 
             midi.send_cc_message(CC_EXPRESSION, c + channel_base, value)
             last_read[c] = pot_value
+        
+        """
 
     time.sleep(0.0001)
