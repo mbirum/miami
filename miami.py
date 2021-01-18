@@ -66,7 +66,7 @@ while True:
         pot_value_remapped = remap_range(pot_value, 0, 65535, 0, 127)
         ema_value_remapped = remap_range(ema_pot_value, 0, 65535, 0, 127)
 
-        print(pot_value_remapped + '    ' + ema_value_remapped)
+        print('%s   %s'%(pot_value_remapped, ema_value_remapped))
 
         """
 
