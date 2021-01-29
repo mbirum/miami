@@ -1,1 +1,3 @@
+./rtp
+sleep 2
 exec -a miami python3 /home/pi/miami/miami.py &
