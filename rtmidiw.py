@@ -10,7 +10,7 @@ class MIDIInterface:
         self.check_device()
 
     def check_device(self):
-        self.midiout = rtmidi.MidiOut()
+        self.midiout = rtmidi.RtMidiOut()
         available_ports = self.midiout.get_ports()
 
         for i in range(len(available_ports)):
