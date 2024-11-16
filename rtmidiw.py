@@ -29,4 +29,5 @@ class MIDIInterface:
         if self.port_index != -1:
             hex_str = hex(self.channel_hex_base + channel)
             channel_hex = int(hex_str, 16)
+            print(f'{channel_hex}, {cc}, {value}')
             self.midiout.send_message([channel_hex, cc, value])
